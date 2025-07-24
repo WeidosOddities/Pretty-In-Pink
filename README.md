@@ -1,10 +1,8 @@
 <div align="center">
-  <img src=".idea/icon.png" width="192" height="192" alt="Logo of mod">
+  <img src="icon.png" width="192" height="192" alt="Logo of mod">
   <h1>Pretty In Pink</h1>
-	<a href=""><img src="https://img.shields.io/badge/Avalable_For-1.21.1-blue
-" alt="Supported Versions"></a>
-	<a href="https://github.com/Creators-of-Create/Create/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red
-" alt="License"></a>
+	<a href=""><img src="https://img.shields.io/badge/Avalable_For-1.21.1-blue" alt="Supported Versions"></a>
+	<a href="https://github.com/WeidosOddities/pretty_in_pink/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red" alt="License"></a>
 </div>
 
 ___
