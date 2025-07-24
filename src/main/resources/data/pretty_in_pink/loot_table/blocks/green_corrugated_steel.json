@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "pretty_in_pink:green_corrugated_steel"
+        }
+      ]
+    }
+  ]
+}

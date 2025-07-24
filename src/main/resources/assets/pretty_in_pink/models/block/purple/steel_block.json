@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "pretty_in_pink:block/purple/steel_block"
+  }
+}

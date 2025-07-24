@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "create:zinc_ingot"
+  },
+  "result": {
+    "count" : 1,
+    "id" : "pretty_in_pink:black_brushed_steel_hull"
+  }
+}

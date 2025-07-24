@@ -1,0 +1,10 @@
+{
+  "parent": "block/cube_all",
+  "ambient_occlusion": false,
+  "display": {
+    "gui": {
+      "rotation": [30, 45, 0],
+      "scale": [0.4125, 0.4125, 0.4125]
+    }
+  }
+}

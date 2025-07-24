@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "pretty_in_pink:block/black/steel_boiler_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "pretty_in_pink:block/black/steel_boiler"
+    },
+    "axis=z": {
+      "model": "pretty_in_pink:block/black/steel_boiler_horizontal",
+      "x": 90
+    }
+  }
+}

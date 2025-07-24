@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "pretty_in_pink:block/orange/brushed_steel_top",
+    "side": "pretty_in_pink:block/orange/brushed_steel"
+  }
+}

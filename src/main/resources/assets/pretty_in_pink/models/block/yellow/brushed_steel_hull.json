@@ -1,0 +1,11 @@
+{
+  "parent": "pretty_in_pink:block/hull/steel_hull",
+  "flip_v": true,
+  "loader": "neoforge:obj",
+  "model": "pretty_in_pink:models/block/hull/steel_hull.obj",
+  "textures": {
+    "front": "pretty_in_pink:block/yellow/steel_hull_front",
+    "particle": "pretty_in_pink:block/yellow/steel_hull_front",
+    "sides": "pretty_in_pink:block/yellow/brushed_steel_hull"
+  }
+}
