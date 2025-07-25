@@ -1,16 +1,34 @@
 {
   "variants": {
-    "axis=x": {
-      "model": "pretty_in_pink:block/light_gray/steel_boiler_horizontal",
+    "facing=north": {
+      "model": "pretty_in_pink:block/light_gray/steel_boiler",
+      "x": 90,
+      "y": 180
+    },
+    "facing=east": {
+      "model": "pretty_in_pink:block/light_gray/steel_boiler",
+      "x": 90,
+      "y": 270
+    },
+    "facing=south": {
+      "model": "pretty_in_pink:block/light_gray/steel_boiler",
+      "x": 90,
+      "y": 0
+    },
+    "facing=west": {
+      "model": "pretty_in_pink:block/light_gray/steel_boiler",
       "x": 90,
       "y": 90
     },
-    "axis=y": {
-      "model": "pretty_in_pink:block/light_gray/steel_boiler"
+    "facing=up": {
+      "model": "pretty_in_pink:block/light_gray/steel_boiler",
+      "x": 180,
+      "y": 0
     },
-    "axis=z": {
-      "model": "pretty_in_pink:block/light_gray/steel_boiler_horizontal",
-      "x": 90
+    "facing=down": {
+      "model": "pretty_in_pink:block/light_gray/steel_boiler",
+      "x": 0,
+      "y": 0
     }
   }
 }
