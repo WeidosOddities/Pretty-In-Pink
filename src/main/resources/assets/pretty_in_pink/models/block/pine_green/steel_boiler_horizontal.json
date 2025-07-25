@@ -1,7 +1,0 @@
-{
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "pretty_in_pink:block/pine_green/steel_boiler_top",
-    "side": "pretty_in_pink:block/pine_green/steel_boiler"
-  }
-}
