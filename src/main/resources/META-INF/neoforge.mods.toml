@@ -14,7 +14,7 @@ description='''${mod_description}'''
 [[dependencies.${mod_id}]]
     modId="neoforge"
     type="required"
-    versionRange="[${neo_version},)"
+    versionRange="[21.1.150,)"
     ordering="NONE"
     side="BOTH"
 
