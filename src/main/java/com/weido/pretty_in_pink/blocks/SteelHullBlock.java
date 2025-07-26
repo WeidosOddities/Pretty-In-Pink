@@ -16,13 +16,13 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
 
-public class WrenchableHullBlock extends Block implements IWrenchable {
+public class SteelHullBlock extends Block implements IWrenchable {
     //Steam 'N Rails Boiler Implementation
 
     public static final EnumProperty<Direction> HORIZONTAL_FACING = BlockStateProperties.HORIZONTAL_FACING;
     public static final BooleanProperty RAISED = BooleanProperty.create("raised");
 
-    public WrenchableHullBlock(Properties properties) {
+    public SteelHullBlock(Properties properties) {
         super(properties);
         registerDefaultState(defaultBlockState()
             .setValue(HORIZONTAL_FACING, Direction.NORTH)

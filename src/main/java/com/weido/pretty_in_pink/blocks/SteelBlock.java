@@ -6,8 +6,8 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class WrenchableBlock extends Block implements IWrenchable {
-    public WrenchableBlock(Properties p_i48440_1_) {
+public class SteelBlock extends Block implements IWrenchable {
+    public SteelBlock(Properties p_i48440_1_) {
         super(p_i48440_1_);
     }
 

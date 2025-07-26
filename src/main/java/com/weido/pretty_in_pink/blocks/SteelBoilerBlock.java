@@ -4,8 +4,8 @@ import com.simibubi.create.foundation.block.WrenchableDirectionalBlock;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class BoilerBlock extends WrenchableDirectionalBlock {
-    public BoilerBlock(Properties properties) {
+public class SteelBoilerBlock extends WrenchableDirectionalBlock {
+    public SteelBoilerBlock(Properties properties) {
         super(properties);
     }
 

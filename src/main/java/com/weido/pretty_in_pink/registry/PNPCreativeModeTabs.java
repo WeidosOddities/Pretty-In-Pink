@@ -27,15 +27,15 @@ import java.util.function.Predicate;
 public class PNPCreativeModeTabs {
     //Copied from Create's Creative Mode Tab Implementation
     private static final DeferredRegister<CreativeModeTab> REGISTER =
-            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PrettyInPink.MOD_ID);
+        DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PrettyInPink.MOD_ID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_CREATIVE_TAB = REGISTER.register("base",
-            () -> CreativeModeTab.builder()
-                    .title(Component.translatable("itemGroup.pretty_in_pink.base"))
-                    .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
-                    .icon(PNPBlocks.PINK_STEEL_BLOCK::asStack)
-                    .displayItems(new RegistrateDisplayItemGenerator(PNPCreativeModeTabs.BASE_CREATIVE_TAB))
-                    .build());
+        () -> CreativeModeTab.builder()
+            .title(Component.translatable("itemGroup.pretty_in_pink.base"))
+            .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
+            .icon(PNPBlocks.PINK_STEEL_BLOCK::asStack)
+            .displayItems(new RegistrateDisplayItemGenerator(PNPCreativeModeTabs.BASE_CREATIVE_TAB))
+            .build());
 
     @ApiStatus.Internal
     public static void register(IEventBus modEventBus) {
@@ -58,27 +58,27 @@ public class PNPCreativeModeTabs {
         }
 
         @Override
-            public void accept(CreativeModeTab.@NotNull ItemDisplayParameters parameters, CreativeModeTab.@NotNull Output output) {
-                List<Item> items = collectBlocks();
-                outputAll(output, items);
-            }
+        public void accept(CreativeModeTab.@NotNull ItemDisplayParameters parameters, CreativeModeTab.@NotNull Output output) {
+            List<Item> items = collectBlocks();
+            outputAll(output, items);
+        }
 
-            private List<Item> collectBlocks() {
-                List<Item> items = new ReferenceArrayList<>();
-                for (RegistryEntry<Block, Block> entry : PrettyInPink.registrate().getAll(Registries.BLOCK)) {
-                    if (!CreateRegistrate.isInCreativeTab(entry, tabFilter))
-                        continue;
-                    Item item = entry.get().asItem();
-                    if (item != Items.AIR)
-                        items.add(item);
-                }
-                return items;
+        private List<Item> collectBlocks() {
+            List<Item> items = new ReferenceArrayList<>();
+            for (RegistryEntry<Block, Block> entry : PrettyInPink.registrate().getAll(Registries.BLOCK)) {
+                if (!CreateRegistrate.isInCreativeTab(entry, tabFilter))
+                    continue;
+                Item item = entry.get().asItem();
+                if (item != Items.AIR)
+                    items.add(item);
             }
+            return items;
+        }
 
-            private static void outputAll(CreativeModeTab.Output output, List<Item> items) {
-                for (Item item : items) {
-                    output.accept(new ItemStack(item), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-                }
+        private static void outputAll(CreativeModeTab.Output output, List<Item> items) {
+            for (Item item : items) {
+                output.accept(new ItemStack(item), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             }
         }
+    }
 }
