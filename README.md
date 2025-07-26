@@ -7,7 +7,7 @@
 
 ___
 ## Pretty In Pink is a Create addon that adds many different colors of steel
-___
+
 #### This mod currently adds:
  - 24 different colors of blocks to choose from.
  - 2 different hull options which can be also offset (Same thing Steam 'N Rails does).
@@ -15,7 +15,7 @@ ___
  - All craftable using zinc ingots in a stonecutter (didn't know what else to do)
 ___
 ## License
-___
+
 Pretty In Pink is licensed under the MIT license, checkout [LICENSE](LICENSE) for more information.
 
 Sections of code were used from the Create mod, which is licensed under the MIT license, check out [Create's license](https://github.com/Creators-of-Create/Create/blob/mc1.18/dev/LICENSE) for more information.
