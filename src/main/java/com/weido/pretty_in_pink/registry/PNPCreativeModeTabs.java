@@ -18,7 +18,6 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.apache.commons.lang3.mutable.MutableObject;
-import org.jetbrains.annotations.ApiStatus;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -37,7 +36,6 @@ public class PNPCreativeModeTabs {
             .displayItems(new RegistrateDisplayItemGenerator(PNPCreativeModeTabs.BASE_CREATIVE_TAB))
             .build());
 
-    @ApiStatus.Internal
     public static void register(IEventBus modEventBus) {
         REGISTER.register(modEventBus);
     }
