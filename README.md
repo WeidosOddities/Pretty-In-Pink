@@ -3,6 +3,9 @@
   <h1>Pretty In Pink</h1>
 	<a href=""><img src="https://img.shields.io/badge/Avalable_For-1.21.1-blue" alt="Supported Versions"></a>
 	<a href="https://github.com/WeidosOddities/pretty_in_pink/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red" alt="License"></a>
+    <a href="https://discord.gg/AenU6BcFSW"><img src="https://img.shields.io/discord/1398879261296689162?style=flat&label=Discord&color=5865f2" alt="License"></a>
+    <a href="https://modrinth.com/mod/pretty-in-pink"><img src="https://img.shields.io/modrinth/dt/pretty-in-pink?logo=modrinth&label=&suffix=%20&style=flat&color=242629&labelColor=5ca424&logoColor=1c1c1c" alt="Modrinth"></a>
+    <a href="https://www.curseforge.com/minecraft/mc-mods/pretty-in-pink"><img src="https://img.shields.io/curseforge/dt/1313661?logo=curseforge&label=&suffix=%20&style=flat&color=242629&labelColor=F16436&logoColor=1c1c1c" alt="CurseForge"></a>
 </div>
 
 ___
