@@ -31,3 +31,9 @@ jobs:
 
       - name: Build with Gradle
         run: ./gradlew build
+
+      - name: Upload Mod Artifact
+        uses: actions/upload-artifact@v4
+        with:
+         name: pretty_in_pink
+         path: build/libs/*.jar
