@@ -30,9 +30,9 @@ public class PNPCreativeModeTabs {
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_CREATIVE_TAB = REGISTER.register("base",
         () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.pretty_in_pink.base"))
+            .title(PNPBlocks.TAB_TITLE)
             .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
-            .icon(PNPBlocks.PINK_STEEL_BLOCK::asStack)
+            .icon(() -> new ItemStack(PNPBlocks.BRUSHED_STEEL_BLOCKS.get("pink")))
             .displayItems(new RegistrateDisplayItemGenerator(PNPCreativeModeTabs.BASE_CREATIVE_TAB))
             .build());
 

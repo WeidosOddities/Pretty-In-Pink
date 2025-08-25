@@ -4,6 +4,7 @@ import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.weido.pretty_in_pink.registry.PNPBlocks;
 import com.weido.pretty_in_pink.registry.PNPCreativeModeTabs;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -34,6 +35,10 @@ public class PrettyInPink {
 
     public static void init(final FMLCommonSetupEvent event) {
         LOGGER.info("{} initializing...", MOD_NAME);
+    }
+
+    public static ResourceLocation asResource(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 
     public static CreateRegistrate registrate() {

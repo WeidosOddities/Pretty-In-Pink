@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "pretty_in_pink:block/sea_green/brushed_steel",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "pretty_in_pink:block/sea_green/brushed_steel",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "pretty_in_pink:block/sea_green/brushed_steel",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "pretty_in_pink:block/sea_green/brushed_steel",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "pretty_in_pink:block/sea_green/brushed_steel"
+    },
+    "facing=west": {
+      "model": "pretty_in_pink:block/sea_green/brushed_steel",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

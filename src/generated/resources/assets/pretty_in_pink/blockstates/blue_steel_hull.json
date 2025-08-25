@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "facing=east,raised=false": {
+      "model": "pretty_in_pink:block/blue/steel_hull",
+      "y": 180
+    },
+    "facing=east,raised=true": {
+      "model": "pretty_in_pink:block/blue/steel_hull_raised",
+      "y": 180
+    },
+    "facing=north,raised=false": {
+      "model": "pretty_in_pink:block/blue/steel_hull",
+      "y": 90
+    },
+    "facing=north,raised=true": {
+      "model": "pretty_in_pink:block/blue/steel_hull_raised",
+      "y": 90
+    },
+    "facing=south,raised=false": {
+      "model": "pretty_in_pink:block/blue/steel_hull",
+      "y": 270
+    },
+    "facing=south,raised=true": {
+      "model": "pretty_in_pink:block/blue/steel_hull_raised",
+      "y": 270
+    },
+    "facing=west,raised=false": {
+      "model": "pretty_in_pink:block/blue/steel_hull"
+    },
+    "facing=west,raised=true": {
+      "model": "pretty_in_pink:block/blue/steel_hull_raised"
+    }
+  }
+}

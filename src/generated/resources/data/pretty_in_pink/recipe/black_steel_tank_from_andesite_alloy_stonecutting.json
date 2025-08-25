@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "create:andesite_alloy"
+  },
+  "result": {
+    "count": 2,
+    "id": "pretty_in_pink:black_steel_tank"
+  }
+}
