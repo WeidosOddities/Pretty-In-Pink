@@ -23,7 +23,13 @@ import java.util.Map;
 public class PNPBlocks {
     private static final CreateRegistrate REGISTRATE = PrettyInPink.registrate();
 
-    public static final Map<String, BlockEntry<SteelBlock>> BRUSHED_STEEL_BLOCKS = new HashMap<>();
+    public static final Map<String, BlockEntry<SteelBlock>> STEEL_BLOCKS = new HashMap<>();
+    public static final Map<String, BlockEntry<SteelDirectionalBlock>> CORRUGATED_STEEL_BLOCKS = new HashMap<>();
+    public static final Map<String, BlockEntry<SteelDirectionalBlock>> STEEL_TANK_BLOCKS = new HashMap<>();
+    public static final Map<String, BlockEntry<SteelDirectionalBlock>> STEEL_BOILER_BLOCKS = new HashMap<>();
+    public static final Map<String, BlockEntry<SteelDirectionalBlock>> BRUSHED_STEEL_BLOCKS = new HashMap<>();
+    public static final Map<String, BlockEntry<SteelHullBlock>> STEEL_HULL_BLOCKS = new HashMap<>();
+    public static final Map<String, BlockEntry<SteelHullBlock>> BRUSHED_STEEL_HULL_BLOCKS = new HashMap<>();
 
     public static MutableComponent TAB_TITLE = add("itemGroup", "base", PrettyInPink.MOD_NAME + " 🗿");
 
@@ -72,6 +78,11 @@ public class PNPBlocks {
                     .recipe((c, p) -> {
                         p.stonecutting(DataIngredient.items(AllItems.ANDESITE_ALLOY.get()), RecipeCategory.DECORATIONS, c, 2);
                         p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, AllItems.ANDESITE_ALLOY, 2);
+                        if (!colorName.equals("white")) {
+                            BlockEntry<SteelBlock> whiteEntry = STEEL_BLOCKS.get("white");
+                            if (whiteEntry != null)
+                                p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, whiteEntry, 1);
+                        }
                     })
                 .lang(capitalize(colorName) + " " + capitalize("steel_block"))
                 .item()
@@ -87,28 +98,46 @@ public class PNPBlocks {
             registerHulls(colorName, mapColor, "steel_hull");
             registerHulls(colorName, mapColor, "brushed_steel_hull");
 
-            BRUSHED_STEEL_BLOCKS.put(colorName, entry);
+            STEEL_BLOCKS.put(colorName, entry);
         }
     }
 
     private static void registerBlocks(String colorName, MapColor mapColor, String type) {
-        REGISTRATE.block(colorName + "_" + type, SteelDirectionalBlock::new)
+        BlockEntry<SteelDirectionalBlock> entry = REGISTRATE.block(colorName + "_" + type, SteelDirectionalBlock::new)
             .transform(BuilderTransformers.sharedBlock())
             .properties(p -> p.mapColor(mapColor))
             .blockstate((c, p) -> p.directionalBlock(c.get(), p.models().getExistingFile(p.modLoc("block/" + colorName + "/" + type))))
                 .recipe((c, p) -> {
                     p.stonecutting(DataIngredient.items(AllItems.ANDESITE_ALLOY.get()), RecipeCategory.DECORATIONS, c, 2);
                     p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, AllItems.ANDESITE_ALLOY, 2);
+                    if (!colorName.equals("white")) {
+                        BlockEntry<SteelDirectionalBlock> whiteEntry = switch (type) {
+                            case "corrugated_steel" -> CORRUGATED_STEEL_BLOCKS.get("white");
+                            case "steel_tank" -> STEEL_TANK_BLOCKS.get("white");
+                            case "brushed_steel" -> BRUSHED_STEEL_BLOCKS.get("white");
+                            case "steel_boiler" -> STEEL_BOILER_BLOCKS.get("white");
+                            default -> null;
+                        };
+                        if (whiteEntry != null)
+                            p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, whiteEntry, 1);
+                    }
                 })
             .lang(capitalize(colorName) + " " + capitalize(type))
             .item()
             .model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/" + colorName + "/" + type)))
             .build()
             .register();
+
+        switch (type) {
+            case "corrugated_steel" -> CORRUGATED_STEEL_BLOCKS.put(colorName, entry);
+            case "steel_tank" -> STEEL_TANK_BLOCKS.put(colorName, entry);
+            case "brushed_steel" -> BRUSHED_STEEL_BLOCKS.put(colorName, entry);
+            case "steel_boiler" -> STEEL_BOILER_BLOCKS.put(colorName, entry);
+        }
     }
 
     private static void registerHulls(String colorName, MapColor mapColor, String type) {
-        REGISTRATE.block(colorName + "_" + type, SteelHullBlock::new)
+        BlockEntry<SteelHullBlock> entry = REGISTRATE.block(colorName + "_" + type, SteelHullBlock::new)
             .transform(BuilderTransformers.sharedBlock())
             .properties(p -> p.mapColor(mapColor))
             .blockstate((c, p) -> p.getVariantBuilder(c.get())
@@ -131,13 +160,26 @@ public class PNPBlocks {
             )
                 .recipe((c, p) -> {
                     p.stonecutting(DataIngredient.items(AllItems.ANDESITE_ALLOY.get()), RecipeCategory.DECORATIONS, c, 2);
-                    p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, AllItems.ANDESITE_ALLOY, 2);
+                    if (!colorName.equals("white")) {
+                        BlockEntry<SteelHullBlock> whiteEntry = switch (type) {
+                            case "steel_hull" -> STEEL_HULL_BLOCKS.get("white");
+                            case "brushed_steel_hull" -> BRUSHED_STEEL_HULL_BLOCKS.get("white");
+                            default -> null;
+                        };
+                        if (whiteEntry != null)
+                            p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, whiteEntry, 1);
+                    }
                 })
             .lang(capitalize(colorName) + " " + capitalize(type))
             .item()
             .model((c, p) -> p.withExistingParent(c.getName(), p.modLoc("block/" + colorName + "/" + type)))
             .build()
             .register();
+
+        switch (type) {
+            case "steel_hull" -> STEEL_HULL_BLOCKS.put(colorName, entry);
+            case "brushed_steel_hull" -> BRUSHED_STEEL_HULL_BLOCKS.put(colorName, entry);
+        }
     }
 
     public static String capitalize(String str) {

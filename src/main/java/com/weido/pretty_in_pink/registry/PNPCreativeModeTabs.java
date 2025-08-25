@@ -32,7 +32,7 @@ public class PNPCreativeModeTabs {
         () -> CreativeModeTab.builder()
             .title(PNPBlocks.TAB_TITLE)
             .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
-            .icon(() -> new ItemStack(PNPBlocks.BRUSHED_STEEL_BLOCKS.get("pink")))
+            .icon(() -> new ItemStack(PNPBlocks.STEEL_BLOCKS.get("pink")))
             .displayItems(new RegistrateDisplayItemGenerator(PNPCreativeModeTabs.BASE_CREATIVE_TAB))
             .build());
 

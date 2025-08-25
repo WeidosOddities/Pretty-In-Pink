@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "pretty_in_pink:lime_brushed_steel_hull"
+  },
+  "result": {
+    "count": 1,
+    "id": "pretty_in_pink:white_brushed_steel_hull"
+  }
+}

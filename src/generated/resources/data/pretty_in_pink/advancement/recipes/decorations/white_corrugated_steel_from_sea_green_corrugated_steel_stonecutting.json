@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_sea_green_corrugated_steel": {
+      "conditions": {
+        "items": [
+          {
+            "items": "pretty_in_pink:sea_green_corrugated_steel"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pretty_in_pink:white_corrugated_steel_from_sea_green_corrugated_steel_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_sea_green_corrugated_steel"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pretty_in_pink:white_corrugated_steel_from_sea_green_corrugated_steel_stonecutting"
+    ]
+  }
+}

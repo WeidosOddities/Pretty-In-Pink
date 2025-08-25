@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "pretty_in_pink:maroon_brushed_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "pretty_in_pink:white_brushed_steel"
+  }
+}

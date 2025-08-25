@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pretty_in_pink:white_brushed_steel_hull_from_turquoise_brushed_steel_hull_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_turquoise_brushed_steel_hull": {
+      "conditions": {
+        "items": [
+          {
+            "items": "pretty_in_pink:turquoise_brushed_steel_hull"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_turquoise_brushed_steel_hull"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pretty_in_pink:white_brushed_steel_hull_from_turquoise_brushed_steel_hull_stonecutting"
+    ]
+  }
+}
