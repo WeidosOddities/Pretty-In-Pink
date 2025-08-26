@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "pretty_in_pink:iron_nugget_from_white_brushed_steel_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_white_brushed_steel": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "pretty_in_pink:white_brushed_steel"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_white_brushed_steel",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "pretty_in_pink:iron_nugget_from_white_brushed_steel_stonecutting"
+    ]
+  },
+  "sends_telemetry_event": false
+}

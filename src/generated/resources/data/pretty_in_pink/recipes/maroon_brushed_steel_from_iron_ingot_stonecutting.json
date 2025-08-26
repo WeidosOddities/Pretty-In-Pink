@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "minecraft:iron_ingot"
+  },
+  "result": "pretty_in_pink:maroon_brushed_steel"
+}

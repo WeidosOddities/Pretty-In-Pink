@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "pretty_in_pink:yellow_brushed_steel"
+  },
+  "result": "minecraft:iron_nugget"
+}

@@ -10,13 +10,12 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.CreativeModeTab.DisplayItemsGenerator;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
 import org.apache.commons.lang3.mutable.MutableObject;
 import org.jetbrains.annotations.NotNull;
 
@@ -28,7 +27,7 @@ public class PNPCreativeModeTabs {
     private static final DeferredRegister<CreativeModeTab> REGISTER =
         DeferredRegister.create(Registries.CREATIVE_MODE_TAB, PrettyInPink.MOD_ID);
 
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BASE_CREATIVE_TAB = REGISTER.register("base",
+    public static final RegistryObject<CreativeModeTab> BASE_CREATIVE_TAB = REGISTER.register("base",
         () -> CreativeModeTab.builder()
             .title(PNPBlocks.TAB_TITLE)
             .withTabsBefore(AllCreativeModeTabs.PALETTES_CREATIVE_TAB.getKey())
@@ -40,7 +39,7 @@ public class PNPCreativeModeTabs {
         REGISTER.register(modEventBus);
     }
 
-    private record RegistrateDisplayItemGenerator(DeferredHolder<CreativeModeTab, CreativeModeTab> tabFilter) implements DisplayItemsGenerator {
+    private record RegistrateDisplayItemGenerator(RegistryObject<CreativeModeTab> tabFilter) implements DisplayItemsGenerator {
         public static final Predicate<Item> IS_ITEM_3D_PREDICATE;
 
         static {
@@ -63,7 +62,7 @@ public class PNPCreativeModeTabs {
 
         private List<Item> collectBlocks() {
             List<Item> items = new ReferenceArrayList<>();
-            for (RegistryEntry<Block, Block> entry : PrettyInPink.registrate().getAll(Registries.BLOCK)) {
+            for (RegistryEntry<Block> entry : PrettyInPink.registrate().getAll(Registries.BLOCK)) {
                 if (!CreateRegistrate.isInCreativeTab(entry, tabFilter))
                     continue;
                 Item item = entry.get().asItem();

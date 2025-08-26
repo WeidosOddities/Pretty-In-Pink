@@ -14,7 +14,7 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
-import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 
 import java.util.HashMap;
 import java.util.List;

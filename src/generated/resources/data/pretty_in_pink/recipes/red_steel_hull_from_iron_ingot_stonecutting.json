@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "minecraft:iron_ingot"
+  },
+  "result": "pretty_in_pink:red_steel_hull"
+}
