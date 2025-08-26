@@ -1,6 +1,5 @@
 package com.weido.pretty_in_pink.registry;
 
-import com.simibubi.create.AllItems;
 import com.simibubi.create.foundation.data.CreateRegistrate;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.entry.BlockEntry;
@@ -12,6 +11,7 @@ import com.weido.pretty_in_pink.data.BuilderTransformers;
 import net.minecraft.core.Direction;
 import net.minecraft.data.recipes.RecipeCategory;
 import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
@@ -76,8 +76,8 @@ public class PNPBlocks {
                 .properties(p -> p.mapColor(mapColor))
                 .blockstate((c, p) -> p.simpleBlock(c.get(), p.models().getExistingFile(p.modLoc("block/" + colorName + "/steel_block"))))
                     .recipe((c, p) -> {
-                        p.stonecutting(DataIngredient.items(AllItems.ANDESITE_ALLOY.get()), RecipeCategory.DECORATIONS, c, 2);
-                        p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, AllItems.ANDESITE_ALLOY, 2);
+                        p.stonecutting(DataIngredient.items(Items.IRON_INGOT.asItem()), RecipeCategory.DECORATIONS, c, 2);
+                        p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, () -> Items.IRON_NUGGET, 2);
                         if (!colorName.equals("white")) {
                             BlockEntry<SteelBlock> whiteEntry = STEEL_BLOCKS.get("white");
                             if (whiteEntry != null)
@@ -108,8 +108,8 @@ public class PNPBlocks {
             .properties(p -> p.mapColor(mapColor))
             .blockstate((c, p) -> p.directionalBlock(c.get(), p.models().getExistingFile(p.modLoc("block/" + colorName + "/" + type))))
                 .recipe((c, p) -> {
-                    p.stonecutting(DataIngredient.items(AllItems.ANDESITE_ALLOY.get()), RecipeCategory.DECORATIONS, c, 2);
-                    p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, AllItems.ANDESITE_ALLOY, 2);
+                    p.stonecutting(DataIngredient.items(Items.IRON_INGOT.asItem()), RecipeCategory.DECORATIONS, c, 2);
+                    p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, () -> Items.IRON_NUGGET, 2);
                     if (!colorName.equals("white")) {
                         BlockEntry<SteelDirectionalBlock> whiteEntry = switch (type) {
                             case "corrugated_steel" -> CORRUGATED_STEEL_BLOCKS.get("white");
@@ -159,7 +159,8 @@ public class PNPBlocks {
                 })
             )
                 .recipe((c, p) -> {
-                    p.stonecutting(DataIngredient.items(AllItems.ANDESITE_ALLOY.get()), RecipeCategory.DECORATIONS, c, 2);
+                    p.stonecutting(DataIngredient.items(Items.IRON_INGOT.asItem()), RecipeCategory.DECORATIONS, c, 2);
+                    p.stonecutting(DataIngredient.items(c), RecipeCategory.DECORATIONS, () -> Items.IRON_NUGGET, 2);
                     if (!colorName.equals("white")) {
                         BlockEntry<SteelHullBlock> whiteEntry = switch (type) {
                             case "steel_hull" -> STEEL_HULL_BLOCKS.get("white");
