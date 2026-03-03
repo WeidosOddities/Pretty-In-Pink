@@ -34,7 +34,7 @@ public class PrettyInPink {
     }
 
     public static void init(final FMLCommonSetupEvent event) {
-        LOGGER.info("{} initializing...", MOD_NAME);
+
     }
 
     public static ResourceLocation asResource(String path) {
